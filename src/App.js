@@ -7,19 +7,19 @@ import './App.css';
 // import {Htwo} from './Hone'; // this will not work
 
 // if component export with default
-import Hone from './Hone';
-import Htwo from './Hone'; // this will work
+// import Hone from './Hone';
+// import Htwo from './Hone'; // this will work
+
+// function App() {
+//   return (
+//     <>
+//       <Hone/>
+//       <Htwo/>
+//     </>
+//   );
+// }
 
 function App() {
-  return (
-    <>
-      <Hone/>
-      <Htwo/>
-    </>
-  );
-}
-
-/* function App() {
   return (
     <React.Fragment>
       <div className="container">
@@ -31,6 +31,6 @@ function App() {
       <div className="footer"></div>
     </React.Fragment>
   );
-}*/
+}
 
 export default App;
