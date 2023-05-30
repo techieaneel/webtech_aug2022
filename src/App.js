@@ -1,25 +1,36 @@
 import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+// if component export without default - named import
+// import {Hone} from './Hone';
+// import {Htwo} from './Hone'; // this will not work
+
+// if component export with default
+import Hone from './Hone';
+import Htwo from './Hone'; // this will work
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Hone/>
+      <Htwo/>
+    </>
   );
 }
+
+/* function App() {
+  return (
+    <React.Fragment>
+      <div className="container">
+        <div className="header">
+          <label htmlFor="loginid">Login</label>
+          <input id="loginid" type="text"/>
+        </div>
+      </div>
+      <div className="footer"></div>
+    </React.Fragment>
+  );
+}*/
 
 export default App;
