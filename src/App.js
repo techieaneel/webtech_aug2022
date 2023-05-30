@@ -24,8 +24,7 @@ function App() {
     <React.Fragment>
       <div className="container">
         <div className="header">
-          <label htmlFor="loginid">Login</label>
-          <input id="loginid" type="text"/>
+          Hello Changed Text
         </div>
       </div>
       <div className="footer"></div>
