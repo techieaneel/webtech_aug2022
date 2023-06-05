@@ -3,41 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
-
-/* const spantag = React.createElement(
-  "span",
-  {"className": "spanText"},
-  "This is a Span of Text"
-);
-
-const h1tag = React.createElement(
-  "h1",
-  {"className": "headerText"},
-  spantag
-);*/
-
-// root.render(h1tag);
-
-/* root.render(
-  React.createElement(
-    "h1",
-    {"className": "headerText"},
-    React.createElement(
-      "span",
-      {"className": "spanText"},
-      React.createElement(
-        "b",
-        null,
-        "This is a Bold Text"
-      )
-    )
-  )
-);*/ 
 
 root.render(
   <React.StrictMode>
