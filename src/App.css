@@ -44,3 +44,43 @@ a{
   line-height: 40px;
   color: #fff;
 }
+
+.section{
+  padding: 30px 0;
+}
+
+fieldset{
+  width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px; 
+}
+
+.formrow{
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.formrow input{
+  width: 200px;
+  height: 30px;
+  border: 1px solid #ddd;
+  padding: 4px;
+  border-radius: 3px;
+}
+
+/*
+.formrow button{
+  width: 100px;
+  height: 35px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.formrow button:hover{
+  border: 1px solid #aaa;
+  color: #666;
+} */
+
