@@ -2,54 +2,52 @@ import React from 'react';
 import "./App.css";
 import Logo from './components/logo';
 import Menu from './components/menu';
-import Formlabel from './formfields/formlabel';
-import Forminput from './formfields/forminput';
-import Formbtn from './formfields/formbtn';
+import Dashboard from './components/dashboard';
+import Logout from './components/logout';
+// import Formlabel from './formfields/formlabel';
+// import Forminput from './formfields/forminput';
+// import Formbtn from './formfields/formbtn';
+
+// import Userinfo from './userinfo';
 
 function App() {
+
+  // var user = {
+  //   name : "Sai",
+  //   mobile: "9876543210",
+  //   city: "Ongole"
+  // }
+
+  var isUserLoggedIn = false;
+
   return (
     <React.Fragment>
       <div className='container'>
         <div className='header'>
-          {/* Logo Comes Here */}
-          <Logo />
-          
-          {/* Menu Comes Here */}
+          <Logo />          
           <Menu />
         </div>
-        {/* <div className='banner'>
-          <img src="https://www.w3schools.com/w3images/map.jpg" style={{width: "100%"}}/>
-        </div> */}
-        <div className='section'>
+        {/* <div className='section'>
           <form>
             <fieldset>
               <legend>Registration</legend>
 
               <div className='formrow'>
-                {/* <label htmlFor='fullname'>FullName</label> */}
                 <Formlabel labelText="Full Name" forText="fullname"/>
-                {/* <input type="text" id="fullname" placeholder='Enter Fullname'/> */}
                 <Forminput typeText="text" idText="fullname" phText='Enter Fullname'/>
               </div>
 
               <div className='formrow'>
-                {/* <label htmlFor='mobile'>Mobile</label> */}
                 <Formlabel labelText="Mobile" forText="mobile"/>
-                {/* <input type="tel" id="mobile"  placeholder='Enter Mobile'/> */}
                 <Forminput typeText="tel" idText="mobile" phText='Enter Mobile'/>
               </div>
 
               <div className='formrow'>
-                {/* <label htmlFor='email'>Email</label> */}
                 <Formlabel labelText="Email" forText="email"/>
-                {/* <input type="email" id="email"  placeholder='Enter Email'/> */}
                 <Forminput typeText="email" idText="email" phText='Enter Email'/>
               </div>
 
               <div className='formrow'>
-                {/* <button id="reset">Reset</button>
-                <button id="cancel">Cancel</button>
-                <button id="register">Register</button> */}
                 <Formbtn idText="reset" btnText="Reset" isDisabled="false"/>
                 <Formbtn idText="cancel" btnText="Cancel" isDisabled="true"/>
                 <Formbtn idText="register" btnText="Register" isDisabled="false"/>
@@ -57,6 +55,16 @@ function App() {
 
             </fieldset>
           </form>
+        </div> */}
+        {/* <div className="section">
+          <Userinfo userInfo={user}/>
+        </div> */}
+
+        <div className="section">
+          {
+            // isUserLoggedIn ? <Dashboard/> : <Logout/>
+            !isUserLoggedIn ? <Logout/> : <Dashboard/>
+          }
         </div>
       </div>
     </React.Fragment>
@@ -64,3 +72,11 @@ function App() {
 }
 
 export default App;
+
+// Props Drilling
+// User Information is in APP (Parent) Component 
+// The Information is required for Usertable (Grand Child) Component
+// Even thou Information is not Required for Userinfo (Child) Component, but, it has to pass the Props.
+
+// ContextAPI and useContext Hook
+// Conditional Rendering

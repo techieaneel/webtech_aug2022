@@ -84,3 +84,15 @@ fieldset{
   color: #666;
 } */
 
+
+.userinfo table{
+  border:1px solid #ddd;
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  border-collapse: collapse;
+}
+.userinfo table tr:nth-child(odd){
+  background-color: #fff;
+}
