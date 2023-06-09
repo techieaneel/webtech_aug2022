@@ -2,23 +2,20 @@ import React from 'react';
 import "./App.css";
 import Logo from './components/logo';
 import Menu from './components/menu';
-import Dashboard from './components/dashboard';
-import Logout from './components/logout';
-// import Formlabel from './formfields/formlabel';
-// import Forminput from './formfields/forminput';
-// import Formbtn from './formfields/formbtn';
-
-// import Userinfo from './userinfo';
+import Styles from './styles.module.css';
 
 function App() {
 
-  // var user = {
-  //   name : "Sai",
-  //   mobile: "9876543210",
-  //   city: "Ongole"
-  // }
+  // Pera CSS Object
+  let pera = {
+    fontFamily: '"arial", sans-serif',
+    color: "#999",
+    textAlign: "center"
+  }
 
-  var isUserLoggedIn = false;
+  let centerDiv = {
+    textAlign: "center"
+  }
 
   return (
     <React.Fragment>
@@ -27,44 +24,17 @@ function App() {
           <Logo />          
           <Menu />
         </div>
-        {/* <div className='section'>
-          <form>
-            <fieldset>
-              <legend>Registration</legend>
-
-              <div className='formrow'>
-                <Formlabel labelText="Full Name" forText="fullname"/>
-                <Forminput typeText="text" idText="fullname" phText='Enter Fullname'/>
-              </div>
-
-              <div className='formrow'>
-                <Formlabel labelText="Mobile" forText="mobile"/>
-                <Forminput typeText="tel" idText="mobile" phText='Enter Mobile'/>
-              </div>
-
-              <div className='formrow'>
-                <Formlabel labelText="Email" forText="email"/>
-                <Forminput typeText="email" idText="email" phText='Enter Email'/>
-              </div>
-
-              <div className='formrow'>
-                <Formbtn idText="reset" btnText="Reset" isDisabled="false"/>
-                <Formbtn idText="cancel" btnText="Cancel" isDisabled="true"/>
-                <Formbtn idText="register" btnText="Register" isDisabled="false"/>
-              </div>
-
-            </fieldset>
-          </form>
-        </div> */}
-        {/* <div className="section">
-          <Userinfo userInfo={user}/>
-        </div> */}
-
+        
         <div className="section">
-          {
-            // isUserLoggedIn ? <Dashboard/> : <Logout/>
-            !isUserLoggedIn ? <Logout/> : <Dashboard/>
-          }
+          <h1 style={{color: "red", backgroundColor: "yellow", textAlign: "center", padding: "10px 0"}}> This is a Heading </h1>
+          <p style={pera}> This is a Peragraph </p>
+          <div style={centerDiv}>
+            <span className={Styles.centerspan}>This is a Span Text</span>
+            <blockquote className={Styles.babaquote}>
+              Ipsam fugit quibusdam eum neque bibendum. Pretium illum beatae molestie soluta quis, aenean dignissim distinctio commodo, repellat ullamco. Illum ullamcorper cillum tortor ipsum modi? Hymenaeos.
+              <cite>Lucifer Baba</cite>
+            </blockquote>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -73,10 +43,7 @@ function App() {
 
 export default App;
 
-// Props Drilling
-// User Information is in APP (Parent) Component 
-// The Information is required for Usertable (Grand Child) Component
-// Even thou Information is not Required for Userinfo (Child) Component, but, it has to pass the Props.
-
-// ContextAPI and useContext Hook
-// Conditional Rendering
+// Inline CSS
+// Internal CSS Object
+// External CSS File
+// CSS Module
