@@ -17,6 +17,50 @@ function App() {
     textAlign: "center"
   }
 
+  function sayHi(){
+    alert("Hello, Welcome to Website!");
+  }
+
+  function sayHiToPerson(userName){
+    alert("Hi, " + userName + "! Welcome to Website!");
+  }
+
+  function disText(e){
+    console.log("Written Text is: ", e.target.value);
+  }
+
+  /*
+  // function logOut(){
+  //   // Alert
+  //   alert("Successfully Logged Out!");
+  // }
+
+  const logOut = () => alert("Successfully Logged Out!");
+  */
+
+  /*
+  // function logOut(user){
+  //  alert("Successfully Logged Out!");
+  // }
+
+  const logOut = user => alert("Hey, " + user + "! You Successfully Logged Out!");
+  */
+
+  // function logOut(fname, lname){
+  //  alert("Successfully Logged Out!");
+  // }
+  
+  const logOut = (fname, lname) => alert("Hey, " + fname + " " + lname + "! You Successfully Logged Out!");
+
+  // function calc(num1, num2){
+    // console.log("Total = ", num1 + num2);
+  // return(num1 + num2);
+  // }
+  // console.log(calc(10, 20));
+
+  let calc = (num1, num2) => num1+num2;
+  console.log(calc(20,30));
+
   return (
     <React.Fragment>
       <div className='container'>
@@ -26,15 +70,15 @@ function App() {
         </div>
         
         <div className="section">
-          <h1 style={{color: "red", backgroundColor: "yellow", textAlign: "center", padding: "10px 0"}}> This is a Heading </h1>
-          <p style={pera}> This is a Peragraph </p>
-          <div style={centerDiv}>
-            <span className={Styles.centerspan}>This is a Span Text</span>
-            <blockquote className={Styles.babaquote}>
-              Ipsam fugit quibusdam eum neque bibendum. Pretium illum beatae molestie soluta quis, aenean dignissim distinctio commodo, repellat ullamco. Illum ullamcorper cillum tortor ipsum modi? Hymenaeos.
-              <cite>Lucifer Baba</cite>
-            </blockquote>
-          </div>
+          <a onBlur={x => alert("Blurred!")} href="" style={{color: "blue", display: "inline-block", padding: "20px 30px"}}>Show More...</a>
+          <br/><br/>
+          <span onClick={sayHi}>Say Hi!</span>
+          <br/><br/>
+          <span onClick={name => sayHiToPerson("Sai")}>Say Hi to Person</span>
+          <br/><br/>
+          <input type="text" onChange={e => disText(e)}/>
+          <br/><br/>
+          <button onClick={user => logOut("Vaasu", "Lucifer")}>Lagout</button>
         </div>
       </div>
     </React.Fragment>
@@ -43,7 +87,6 @@ function App() {
 
 export default App;
 
-// Inline CSS
-// Internal CSS Object
-// External CSS File
-// CSS Module
+// React Events
+// Mouse Events
+// Keyboard Events
