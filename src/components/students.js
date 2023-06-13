@@ -7,21 +7,6 @@ function Students(){
         {id:4, name: "Aneel", mobile: "0987654321", city: "Hyderabad"}
     ];
 
-    const menu = [
-        {id:1, menuItem: "Home", isChild: false},
-        {id:2, menuItem: "About", isChild: true, childMenu:[
-            {id:1, menuItem: "Management", isChild: false},
-            {id:2, menuItem: "Employees", isChild: false}
-        ]},
-        {id:3, menuItem: "Services", isChild: true, childMenu:[
-            {id:1, menuItem: "Softwate Services", isChild: false},
-            {id:2, menuItem: "Digital Marketing", isChild: false},
-            {id:2, menuItem: "Web Hosting Services", isChild: false}
-        ]},
-        {id:4, menuItem: "FAQ", isChild: false},
-        {id:5, menuItem: "Contact", isChild: false},
-    ]
-
     return(
         <table style={{border:"1px solid #ccc", width: "400px", margin: "50px auto", textAlign: "center"}}>
             <thead>
