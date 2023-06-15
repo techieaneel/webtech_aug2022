@@ -57,6 +57,14 @@ fieldset{
   border-radius: 10px; 
 }
 
+.login{
+  margin: 30px auto;
+  background-color: #fff;
+  width: 350px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
 .formrow{
   margin-bottom: 30px;
   display: flex;
@@ -68,8 +76,13 @@ fieldset{
   width: 200px;
   height: 30px;
   border: 1px solid #ddd;
-  padding: 4px;
+  padding: 5px;
   border-radius: 3px;
+}
+.formrow button{
+  display: inline-block;
+  height: 30px;
+  padding: 0 30px;
 }
 
 /*
