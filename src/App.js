@@ -1,20 +1,14 @@
-// import React from 'react';
-// import { useState } from 'react';
 import React, {useState} from 'react';
 import "./App.css";
 import Logo from './components/logo';
 import Menu from './components/menu';
-import NewChild from './components/newchild';
-// import Child from './components/child';
-// import Footer from './components/footer';
-// import Login from './components/login';
+import ChildA from './components/childA';
+import ChildB from './components/childB';
 
 function App() {
 
-  /* let [user, setUser] = useState();
-  let [sendUser, setSendUser] = useState("Vasu"); */
-
-  let [userInput, getUserInput] = useState("");  
+  let [student, getStudent] = useState("");
+  console.log("student", student);
 
   return (
     <React.Fragment>
@@ -25,14 +19,8 @@ function App() {
         </div>
         
         <div className="section">
-          {/* <Login/> */}
-          {/* <input type="text" onChange={x=>setUser(x.target.value)}/>
-          <button onClick={x=>setSendUser(user)}>Change Name</button>
-        <br/> */}
-          {/* <Child username={sendUser} setSendUserProp={setSendUser}/> */}
-          {/* <Child userProp={user} username={sendUser} setSendUserProp={setSendUser} setUserProp={setUser}/> */}
-          <NewChild getUserInputProp={getUserInput}/>
-          <p>{userInput}</p>
+          <ChildA getStudentProp={getStudent}/>
+          <ChildB studentProp={student}/>
         </div>
       </div>
     </React.Fragment>
@@ -40,9 +28,3 @@ function App() {
 }
 
 export default App;
-
-// By using UseState Hook. we can create State in Functional Component.
-// first, we have to import useState hook 
-// then we have to create state.
-// let [comName, setComName] = useState("OKSoft Solutions");
-// keyword [variable, setterFunction] = useState(Default Value);
