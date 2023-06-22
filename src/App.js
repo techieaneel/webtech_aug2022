@@ -2,13 +2,32 @@ import React, {useState} from 'react';
 import "./App.css";
 import Logo from './components/logo';
 import Menu from './components/menu';
-import ChildA from './components/childA';
-import ChildB from './components/childB';
 
 function App() {
 
-  let [student, getStudent] = useState("");
-  console.log("student", student);
+  let [initNum, setInitNum] = useState(0);
+  let [isDecDisabled, setIsDecDisabled] = useState(false);
+  console.log("initNum: ", initNum);
+  console.log("isDecDisabled: ", isDecDisabled);
+
+  const incHandler = () => {
+    console.log("initNum: ", initNum);
+    setInitNum(initNum + 1);
+    initNum === 0 ? setIsDecDisabled(true) : setIsDecDisabled(false);
+  }
+
+  const decHandler = () => {
+    console.log("initNum: ", initNum);
+    setInitNum(initNum - 1);
+    initNum === 0 ? setIsDecDisabled(true) : setIsDecDisabled(false);    
+  }
+
+  const resetHandler = () => {
+    console.log("initNum: ", initNum);
+    setInitNum(0);
+    initNum === 0 ? setIsDecDisabled(true) : setIsDecDisabled(false);    
+  }
+
 
   return (
     <React.Fragment>
@@ -19,8 +38,19 @@ function App() {
         </div>
         
         <div className="section">
-          <ChildA getStudentProp={getStudent}/>
-          <ChildB studentProp={student}/>
+          <p>The Initial Number is : {initNum}</p>
+          {/* <button  onClick={num => setInitNum(initNum + 1)}>Increase +</button> &nbsp;
+          <button onClick={num => setInitNum(initNum - 1)}>Decrease -</button> &nbsp;
+          <button onClick={num => setInitNum(0)}>Reset</button> */}
+
+          <button onClick={incHandler}>Increase +</button> &nbsp;
+          <button 
+            disabled={isDecDisabled}
+            onClick={decHandler}
+          >
+            Decrease -
+          </button> &nbsp;
+          <button onClick={resetHandler}>Reset</button>
         </div>
       </div>
     </React.Fragment>
