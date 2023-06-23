@@ -4,46 +4,15 @@ import Logo from './components/logo';
 import Menu from './components/menu';
 
 function App() {
+  // let [userData, setUserData] = useState([]);
+  let [userData, setUserData] = useState([
+    {id: "OK1", name: "Sai", city: "Ongole", course: "Web Technologies"},
+    {id: "OK2", name: "Vasu", city: "Venkatagiri", course: "Web Designing"},
+    {id: "OK3", name: "Sravani", city: "Tirupati", course: "Full stack"},
+  ]);
 
-  let [initNum, setInitNum] = useState(0);
-  let [isDecDisabled, setIsDecDisabled] = useState(false);
-  console.log("initNum: ", initNum);
-  console.log("isDecDisabled: ", isDecDisabled);
-
-  // useEffect(() =>{},[]); // Syntax
-  /* useEffect(() => { // It Renders only Once
-    
-  },[]); */ 
-
-  useEffect(() => { // It Renders Each Time when "initNum" state Changes.
-    initNum === 0 ? setIsDecDisabled(true) : setIsDecDisabled(false);
-  },[initNum]);
-
-  // useEffect(() => { // It Renders when Component unmount
-  //   return () => {
-  //     console.log("cleaned up");
-  //   };
-  // },[]);
-
-
-  const incHandler = () => {
-    console.log("initNum: ", initNum);
-    setInitNum(initNum + 1);
-    initNum === 0 ? setIsDecDisabled(true) : setIsDecDisabled(false);
-  }
-
-  const decHandler = () => {
-    console.log("initNum: ", initNum);
-    setInitNum(initNum - 1);
-    initNum === 0 ? setIsDecDisabled(true) : setIsDecDisabled(false);    
-  }
-
-  const resetHandler = () => {
-    console.log("initNum: ", initNum);
-    setInitNum(0);
-    initNum === 0 ? setIsDecDisabled(true) : setIsDecDisabled(false);    
-  }
-
+  useEffect(() => {
+  },[userData]);
 
   return (
     <React.Fragment>
@@ -54,19 +23,78 @@ function App() {
         </div>
         
         <div className="section">
-          <p>The Initial Number is : {initNum}</p>
-          {/* <button  onClick={num => setInitNum(initNum + 1)}>Increase +</button> &nbsp;
-          <button onClick={num => setInitNum(initNum - 1)}>Decrease -</button> &nbsp;
-          <button onClick={num => setInitNum(0)}>Reset</button> */}
+          {/* <table border="1" width="400" style={{borderCollapse: "collapse", margin: "auto"}}>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Course</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>OK1</td>
+                <td>Sai</td>
+                <td>Ongole</td>
+                <td>Web Technologies</td>
+              </tr>
+              <tr>
+                <td>OK2</td>
+                <td>Vasu</td>
+                <td>Venkatagiri</td>
+                <td>Web Designing</td>
+              </tr>
+              <tr>
+                <td>OK3</td>
+                <td>Sravani</td>
+                <td>Tirupati</td>
+                <td>Full stack</td>
+              </tr>
+            </tbody>
+          </table> */}
 
-          <button onClick={incHandler}>Increase +</button> &nbsp;
-          <button 
-            disabled={isDecDisabled}
-            onClick={decHandler}
-          >
-            Decrease -
-          </button> &nbsp;
-          <button onClick={resetHandler}>Reset</button>
+          <form>
+            <div className='form_row'>
+              <label htmlFor='uid'>User ID</label>
+              <input type="text" id="uid" />
+            </div>
+            <div className='form_row'>
+              <label htmlFor='uname'>User Name</label>
+              <input type="text" id="uname" />
+            </div>
+            <div className='form_row'>
+              <label htmlFor='ucity'>User City</label>
+              <input type="text" id="ucity" />
+            </div>
+            <div className='form_row'>
+              <label htmlFor='ucourse'>User Course</label>
+              <input type="text" id="ucourse" />
+            </div>
+            <div className='form_row'>
+              <button>Submit</button>
+            </div>
+          </form>
+          <table border="1" width="400" style={{borderCollapse: "collapse", margin: "auto"}}>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Course</th>
+              </tr>
+            </thead>
+            <tbody>
+            {userData.map(item => 
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.city}</td>
+                <td>{item.course}</td>
+              </tr>
+            )}
+            </tbody>
+          </table>
         </div>
       </div>
     </React.Fragment>

@@ -122,3 +122,25 @@ fieldset{
   padding: 5px 0 5px 30px;
   color: blueviolet;
 }
+
+form{
+  margin: auto;
+  width: 215px;
+}
+
+.form_row{
+  margin: 10px auto;
+}
+
+.form_row label{
+  display: block;
+  margin-bottom: 2px;
+}
+
+.form_row input{
+  display: block;
+  width: 200px;
+  height: 25px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
