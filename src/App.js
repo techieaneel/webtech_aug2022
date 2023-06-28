@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import "./App.css";
 import Logo from './components/logo';
 import Menu from './components/menu';
-import Studentslist from './components/studentslist';
+import Registration from './components/registration';
 
 function App() {
     return (
@@ -14,7 +14,7 @@ function App() {
         </div>
         
         <div className="section">
-          <Studentslist/>
+          <Registration/>
         </div>
       </div>
     </React.Fragment>
