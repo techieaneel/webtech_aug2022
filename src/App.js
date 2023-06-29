@@ -2,19 +2,19 @@ import React, {useEffect, useState} from 'react';
 import "./App.css";
 import Logo from './components/logo';
 import Menu from './components/menu';
-import Registration from './components/registration';
+import Login from './components/login';
 
 function App() {
     return (
     <React.Fragment>
       <div className='container'>
         <div className='header'>
-          <Logo />          
+          <Logo />
           <Menu />
         </div>
         
         <div className="section">
-          <Registration/>
+          <Login/>
         </div>
       </div>
     </React.Fragment>

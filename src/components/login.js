@@ -1,3 +1,4 @@
+import axios from "axios";
 /* import React, {useState} from 'react';
 
 function Login(){
@@ -104,7 +105,7 @@ function Login(){
 export default Login;
 
 */
-
+/*
 import React, {useState} from 'react';
 
 function Login(){
@@ -158,5 +159,54 @@ function Login(){
             </div>
         </div>
     );
+}
+export default Login;
+*/
+
+function Login(){
+
+    let token = localStorage.getItem("token");    
+    let config = {headers: { Authorization: `Bearer ${token}`}}
+    token = config;
+
+    const loginHandler = (e) => {
+        e.preventDefault();
+        axios.post(
+            "https://dummyjson.com/auth/login", {
+            username: 'kminchelle',
+            password: '0lelplR'}
+        ).then(
+            res => {
+                console.log(res);
+                console.log(res.data);
+                console.log(res.data.token);
+                localStorage.setItem("token", res.data.token);
+                alert("Login Successful...");
+            }
+        ).catch(
+            err => console.log(err)
+        );
+    }
+
+    const getAuthDetailsHandler = (e) => {
+        e.preventDefault();
+        axios.get(
+            "https://dummyjson.com/auth/products/1",token
+        ).then(
+            res=> console.log(res)
+        ).catch(
+            err=> console.log(err)
+        );
+    }
+
+    return(
+        <div className="login">
+            Login Form Here ...
+
+            <button onClick={e=> loginHandler(e)}>Login</button>
+            <br/>
+            <button onClick={e=>getAuthDetailsHandler(e)}>Get Details</button>
+        </div>
+    )
 }
 export default Login;
