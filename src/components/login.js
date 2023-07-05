@@ -201,7 +201,7 @@ function Login(){
 
     return(
         <div className="login">
-            Login Form Here with email and password..
+            Login Form Here with email and password
 
             <button onClick={e=> loginHandler(e)}>Login</button>
             <br/>
